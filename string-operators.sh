@@ -15,3 +15,7 @@ echo $APELLIDO_PAT
 echo $APELLIDO_MAT
 echo "Variable definida: $CONFIRMAR_VAR"
 echo ${#SIZE}
+echo ${#NOMBRE}
+echo ${#APELLIDO_PAT}
+echo ${#APELLIDO_MAT}
+

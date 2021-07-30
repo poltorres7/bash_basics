@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 echo "Soy un programa"
 echo "Ingresa tu suma (1):"
