@@ -1,0 +1,2 @@
+* * * * * /home/paul.torres/cron/cleanlogs.sh /home/paul.torres/cron > /home/paul.torres/cron/clean.logs 2>&1
+

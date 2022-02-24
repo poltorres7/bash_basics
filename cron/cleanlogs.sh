@@ -1,8 +1,15 @@
 #!/bin/bash
 
-TAM=$(du -h /home/diana/cron/mislog.log | cut -f 1 | grep -o '[[:digit:]]*')
+DEST=${1?Missing Path variable}
 
+                            # stderr --> stdou --> /dev/null
+ls ${DEST} > /dev/null 2>&1 # Manda stderr hacia stdout y todo eso hacia /dev/null
+if [ $? -eq 0 ]; then #valida que el comando anterior (ls) haya terminado con exito o no
 
-if [ $TAM -gt 100 ]; then
-  echo "" > /home/diana/cron/mislog.log
-fi
+  # revisa tamaño de un archivo
+  TAM=$(du -h ${DEST}/dummy-$(date +%F).log | cut -f 1 | grep -o '[[:digit:]]*')
+
+  if [ $TAM -gt 100 ]; then
+    echo "" > ${DEST}/dummy-$(date +%F).log
+  fi
+fi 
