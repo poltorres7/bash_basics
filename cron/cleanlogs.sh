@@ -9,7 +9,9 @@ if [ $? -eq 0 ]; then #valida que el comando anterior (ls) haya terminado con ex
   # revisa tamaño de un archivo
   TAM=$(du -h ${DEST}/dummy-$(date +%F).log | cut -f 1 | grep -o '[[:digit:]]*')
 
-  if [ $TAM -gt 100 ]; then
+  if [ $TAM -gt 10 ]; then
     echo "" > ${DEST}/dummy-$(date +%F).log
+    echo "Logs limpios"
   fi
-fi 
+fi
+

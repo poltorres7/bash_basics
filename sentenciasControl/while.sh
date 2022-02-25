@@ -1,9 +1,9 @@
 #!/bin/bash
-contador=0
-termina=10
 
-while [ $termina -ge $contador ]
-do
-  echo $contador
-  let contador=$contador+1
+CONTADOR=$1
+echo "$@"
+
+while [ ${CONTADOR} -lt 6 ]; do
+  echo "Bienvenido ${CONTADOR}"
+  ((CONTADOR=CONTADOR+1))
 done
